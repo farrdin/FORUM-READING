@@ -30,7 +30,7 @@
     <link rel="shortcut icon" href="images/joinforum.png" type="image/x-icon" />
   </head>
   <body>
-    <header class="container mx-auto">
+    <header class="w-10/12 mx-auto">
       <!-- navbar start -->
       <nav class="py-10">
         <div class="navbar bg-base-100 justify-between">
@@ -134,17 +134,17 @@
               </li>
               </ul>
             </div>
-            <a class="text-4xl text-[#12132D] font-black  border p-5 rounded-3xl ">EasyForum</a>
+            <a class="text-4xl text-[#12132D] font-black  cursor-pointer rounded-3xl hover:bg-gray-200 hover:p-4">EasyForum</a>
           </div>
           <div>
           <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-              <li class="px-1">
-                <a class="rounded-full p-4 bg-[#0307121A]"
-                  ><svg
+            <ul class="menu menu-horizontal flex gap-2">
+              <li >
+                <div class="tooltip p-3 bg-[#0307121A] rounded-full" data-tip="Home" >
+              <a ><svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="35"
+                    height="35"
                     viewBox="0 0 24 24"
                     fill="none"
                   >
@@ -157,13 +157,14 @@
                       stroke-linejoin="round"
                     /></svg
                 ></a>
+                  </div>
               </li>
-              <li class="px-1">
-                <a class="rounded-full p-4 bg-[#0307121A]"
-                  ><svg
+              <li >
+                <div class="tooltip p-3 bg-[#0307121A] rounded-full" data-tip="Tooltip" >
+              <a ><svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="35"
+                    height="35"
                     viewBox="0 0 24 24"
                     fill="none"
                   >
@@ -176,13 +177,14 @@
                       stroke-linejoin="round"
                     /></svg
                 ></a>
-              </li >
-              <li class="px-1">
-                <a class="rounded-full p-4 bg-[#0307121A]"
-                  ><svg
+                  </div>
+              </li>
+              <li >
+                <div class="tooltip p-3 bg-[#0307121A] rounded-full" data-tip="Join Forum" >
+              <a ><svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="35"
+                    height="35"
                     viewBox="0 0 24 24"
                     fill="none"
                   >
@@ -195,13 +197,14 @@
                       stroke-linejoin="round"
                     /></svg
                 ></a>
-              </li >
-              <li class="px-1">
-                <a class="rounded-full p-4 bg-[#0307121A]"
-                  ><svg
+                  </div>
+              </li>
+              <li >
+                <div class="tooltip p-3 bg-[#0307121A] rounded-full" data-tip="Dashboard" >
+              <a ><svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="35"
+                    height="35"
                     viewBox="0 0 24 24"
                     fill="none"
                   >
@@ -214,75 +217,74 @@
                       stroke-linejoin="round"
                     /></svg
                 ></a>
+                  </div>
               </li>
             </ul>
           </div>
-          <button class="btn-ghost bg-[#797DFC] text-white px-10 py-4 rounded-[40px] text-xl font-bold ">Sign In</button>
+          <button class="btn-ghost bg-[#797DFC] text-white px-10 py-4 rounded-[40px] text-xl font-bold hover:bg-black">Sign In</button>
         </div>
         </div>
       </nav>
       <!-- navbar ned  -->
     </header>
-    <main class="container mx-auto">
+    <main class="w-10/12 mx-auto">
             <!-- banner section start -->
-
-      <div
-        class="hero min-h-screen"
-        style="
-          background-image: url(images/bgbanner.png);
-          background-color: #12132d;
-        "
-      >
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center  text-neutral-content">
-          <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Welcome to the ReTro Forum</h1>
-            <p class="mb-5">
+      <div class="hero rounded-3xl min-h-screen bg-[#12132D] p-10 lg:p-0" style="background-image: url(images/bgbanner.png)">
+        <div class="hero-content  text-neutral-content w-11/12 flex  flex-col lg:flex-row  justify-between gap-10">
+          <div class="Contents lg:w-[60%] flex flex-col gap-5 lg:gap-10">
+            <h1 class="text-4xl text-center lg:text-start  lg:text-7xl font-black">Welcome to the <span class=" text-transparent bg-clip-text bg-gradient-to-r from-[#797DFC] to-[#797dfc20]">Easy</span> Forum</h1>
+            <p class="mb-5 lg:text-xl font-medium text-center lg:text-start lg:w-[60%]">
               Share your favorite opinion and win and wp forum coffee mug!
             </p>
             <div id="SearchBox">
-              <input type="text" />
-              <button class="btn-ghost">Search</button>
+              <label class="input input-bordered flex items-center gap-2 w-full  lg:w-[60%] lg:py-8 rounded-[40px]">
+              <input id="search-box" type="text" class="grow p-2 text-lg text-[#03071280] font-medium " placeholder="Search Here Anything" />
+              <button id="search-button" class="btn-ghost bg-[#797DFC] rounded-3xl  px-6  py-2 lg:py-3 hover:bg-black">Search</button>
+              </label>
             </div>
           </div>
-          <div>
-            <div class="userDetails">
-              <div class="flex">
-                <p>Registered Users</p>
-                <span>01</span>
+          <div class="userDetails lg:w-[40%]">
+            <div class="lg:w-[90%] mx-auto bg-white rounded-3xl p-12 flex flex-col gap-4">
+              <div class="flex justify-between gap-10 lg:gap-0">
+                <p class="text-2xl font-medium text-[#12132DCC]">Registered Users</p>
+                <span class="text-2xl font-medium text-[#12132DCC]">01</span>
               </div>
-              <div class="flex">
-                <p>Forum</p>
-                <span>05</span>
+              <div class="flex justify-between">
+                <p class="text-2xl font-medium text-[#12132DCC]">Forum</p>
+                <span class="text-2xl font-medium text-[#12132DCC]">05</span>
               </div>
-              <div class="flex">
-                <p>Topics</p>
-                <span>01</span>
+              <div class="flex justify-between">
+                <p class="text-2xl font-medium text-[#12132DCC]">Topics</p>
+                <span class="text-2xl font-medium text-[#12132DCC]">01</span>
               </div>
-              <div class="flex">
-                <p>Replies</p>
-                <span>01</span>
+              <div class="flex justify-between">
+                <p class="text-2xl font-medium text-[#12132DCC]">Replies</p>
+                <span class="text-2xl font-medium text-[#12132DCC]">01</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <!-- banner section end -->
+
       <!-- let's discuss section start -->
-      <div class="letsDiscuss">
+      <div class="letsDiscuss flex flex-col gap-5 mt-40 mb-20">
         <h3
-          class="text-[#131318] font-extrabold text-4xl text-center pt-10 pb-5"
+          class="text-#12132D] text-center text-4xl font-black"
         >
           Let’s Discuss
         </h3>
         <p
-          class="sm:text-lg font-medium text-center text-[#13131899] lg:text-base pb-10"
+          class="text-[#12132D99] lg:text-xl font-[inter] font-normal leading-8 lg:w-3/5 mx-auto text-center"
         >
           Yes, you can run unit tests and view the results directly within the
           app. The integrated testing features allow for a streamlined .
         </p>
       </div>
+        <!-- let's discuss section End -->
+
+
+        <!-- Cards and mark read section started -->
       <div class="cardsAndmarkRead flex">
         <div class="cardSection w-9/12">
           <span > <p id="categorys" class="inline">#Music</p></span><span>Author:  <p id="authorName" class="inline">Awlad Hossain</p></span>
@@ -362,7 +364,8 @@
           </div>
         </div>
       </div>
-      <!-- let's discuss section start -->
+        <!-- Cards and mark read section started -->
+
 
       <!-- Join Our Forum Section Start -->
       <div class="hero min-h-screen" style="background-color: #12132D">
@@ -385,14 +388,14 @@
       <!-- Join Our Forum Section End -->
 
       <!-- Latest Posts Section start -->
-      <div class="latestPosts">
+      <div class="latestPosts flex flex-col gap-5 mt-40 mb-20">
         <h3
-          class="text-[#131318] font-extrabold text-4xl text-center pt-10 pb-5"
+          class="text-#12132D] text-center text-4xl font-black"
         >
           Latest Posts
         </h3>
         <p
-          class="sm:text-lg font-medium text-center text-[#13131899] lg:text-base pb-10"
+          class="text-[#12132D99] lg:text-xl font-[inter] font-normal leading-8 text-center lg:w-3/5 mx-auto"
         >
           Yes, you can run unit tests and view the results directly within the
           app. The integrated testing features allow for a streamlined .
@@ -400,6 +403,7 @@
       </div>
       <!-- Latest Posts Section END -->
 
+      <!-- latest post card section start -->
       <div class="latestPostsCards">
         <div>
           <span id="published-date">
@@ -417,12 +421,14 @@
           <p id="latest-card-designation">Unknown</p></div>
         </div>
       </div>
+            <!-- latest post card section end -->
+
     </main>
     <!-- Footer start   -->
     <footer class="bg-[#1313180d]">
     <div class="footer flex flex-col items-center py-28 ">
       <h1 class="text-[#12132D] text-center text-4xl font-black ">EasyForum</h1>
-      <p class="text-[#12132db3] text-xl font-normal leading-10 text-center">
+      <p class="text-[#12132db3] text-base lg:text-xl font-normal leading-10 text-center">
         Contrary to popular belief, Lorem Ipsum is not simply random text. It
         has roots in a <br> piece of classical Latin literature from 45 BC
       </p>
