@@ -125,9 +125,9 @@ const latestPost = async () => {
 };
 
 // lets discuss functionality added
-const allPost = async () => {
+const allPost = async (searchbox = "") => {
   const response = await fetch(
-    "https://openapi.programming-hero.com/api/retro-forum/posts"
+    `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchbox}`
   );
   const data = await response.json();
   data.posts.forEach((items) => {
@@ -279,6 +279,7 @@ const allPost = async () => {
       `;
     letsCards.appendChild(getCardInfo);
   });
+  toggleSpinner(false);
 
   const allBbtn = document.getElementsByClassName("mark-read-button");
   let count = 0;
@@ -339,6 +340,44 @@ const allPost = async () => {
         `;
       markReadContent.appendChild(content);
     });
+  }
+};
+
+// search funtionality here
+const handleSearch = () => {
+  const searchbox = document.getElementById("search-box").value;
+  document.getElementById("cardSection").innerText = "";
+  toggleSpinner(true);
+  allPost(searchbox);
+};
+
+// scrolling  Buy ticket to select ticket section start
+const letsCardSection = document.getElementById("scroll-now");
+const searchButtonn = document.getElementById("search-button");
+
+function scrollToletCardSection() {
+  const searchBoxValue = document.getElementById("search-box").value.trim();
+
+  if (searchBoxValue !== "") {
+    letsCardSection.scrollIntoView({ behavior: "smooth" });
+  } else {
+    alert("Please type a correct value.");
+  }
+}
+searchButtonn.addEventListener("click", scrollToletCardSection);
+// scrolling  Buy ticket to select ticket section start
+
+//  toggle spinner funtion
+const toggleSpinner = (isLoading) => {
+  const loadingSpinner = document.getElementById("loadingSpinner");
+
+  if (isLoading) {
+    loadingSpinner.classList.remove("hidden");
+    setTimeout(() => {
+      loadingSpinner.classList.add("hidden");
+    }, 2000);
+  } else {
+    loadingSpinner.classList.add("hidden");
   }
 };
 
