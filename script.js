@@ -1,3 +1,5 @@
+// latest post functionality
+
 const latestPost = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
@@ -122,6 +124,7 @@ const latestPost = async () => {
   });
 };
 
+// lets discuss functionality added
 const allPost = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/retro-forum/posts"
@@ -293,7 +296,7 @@ const allPost = async () => {
       const content = document.createElement("div");
       content.classList.add("content");
       content.innerHTML = `<div
-              class="markDetails flex items-center border bg-white rounded-2xl p-3"
+              class="markDetails flex items-center justify-between border bg-white rounded-2xl p-3"
             >
               <h1
                 id="markread-title"

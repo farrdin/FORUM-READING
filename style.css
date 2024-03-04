@@ -26,6 +26,6 @@
   border: 1px solid #797dfc;
 }
 .mark-read-button :hover {
-background-color: black;
-border-radius: 50%;
+  background-color: black;
+  border-radius: 50%;
 }
